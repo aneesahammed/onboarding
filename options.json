@@ -1,0 +1,94 @@
+{
+  "application_name": "",
+  "gear_id": "",
+  "lob": "",
+  "description": "",
+  "category": ["green-field", "brown-field"],
+  "region": ["mea", "uk-europe", "apac"],
+  "implementation": ["devOps-extraLite", "devOps-lite", "devOps-complete"],
+  "technology": [
+    {
+      "name": [
+        "java",
+        "c#",
+        "vb.net",
+        "duckcreek",
+        "pega",
+        "datastage",
+        "sql-server",
+        "oracle",
+        "sybase",
+        "citrix"
+      ],
+      "version": "1.8",
+      "frameworks": [
+        {
+          "name": "springboot",
+          "version": "2.0",
+          "tags": [""]
+        }
+      ]
+    }
+  ],
+  "test-automation": {
+    "status": true,
+    "tool": ["cucumber", "jest"]
+  },
+  "staticscan": {
+    "status": true,
+    "tool": ["veracode"]
+  },
+  "components": {
+    "db": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ],
+    "dml": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ],
+    "services": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ],
+    "ui": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ]
+  },
+  "env": {
+    "dev": [
+      {
+        "label": "dev"
+      }
+    ],
+    "nprd": [
+      {
+        "label": ["qa", "st", "model", "uat"],
+        "job": ""
+      }
+    ],
+    "prod": [
+      {
+        "label": "prod",
+        "job": ""
+      }
+    ]
+  },
+  "dev-manager": {
+    "email": ""
+  },
+  "devops-engineer": [
+    {
+      "email": ""
+    }
+  ]
+}
