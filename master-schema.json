@@ -1,0 +1,266 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "application_name": {
+      "type": "string"
+    },
+    "gear_id": {
+      "type": "string"
+    },
+    "lob": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "enum": ["green-field", "brown-field"]
+    },
+    "region": {
+      "enum": ["mea", "uk-europe", "apac"]
+    },
+    "implementation": {
+      "enum": ["devOps-extraLite", "devOps-lite", "devOps-complete"]
+    },
+    "technology": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "enum": [
+                "java",
+                "c#",
+                "vb.net",
+                "duckcreek",
+                "pega",
+                "datastage",
+                "sql-server",
+                "oracle",
+                "sybase",
+                "citrix"
+              ]
+            },
+            "version": {
+              "type": "string"
+            },
+            "frameworks": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": ["name", "version"]
+                }
+              ]
+            }
+          },
+          "required": ["name", "version", "frameworks"]
+        }
+      ]
+    },
+    "test-automation": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean"
+        },
+        "tool": {
+          "enum": ["cucumber", "jest"]
+        }
+      },
+      "required": ["status", "tool"]
+    },
+    "staticscan": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean"
+        },
+        "tool": {
+          "enum": ["veracode"]
+        }
+      },
+      "required": ["status", "tool"]
+    },
+    "components": {
+      "type": "object",
+      "properties": {
+        "db": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "job": {
+                  "type": "string"
+                }
+              },
+              "required": ["source", "job"]
+            }
+          ]
+        },
+        "dml": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "job": {
+                  "type": "string"
+                }
+              },
+              "required": ["source", "job"]
+            }
+          ]
+        },
+        "services": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "job": {
+                  "type": "string"
+                }
+              },
+              "required": ["source", "job"]
+            }
+          ]
+        },
+        "ui": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "job": {
+                  "type": "string"
+                }
+              },
+              "required": ["source", "job"]
+            }
+          ]
+        }
+      },
+      "required": ["db", "dml", "services", "ui"]
+    },
+    "env": {
+      "type": "object",
+      "properties": {
+        "dev": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": ["label"]
+            }
+          ]
+        },
+        "nprd": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "enum": ["qa", "st", "model", "uat"]
+                },
+                "job": {
+                  "type": "string"
+                }
+              },
+              "required": ["label", "job"]
+            }
+          ]
+        },
+        "prod": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "job": {
+              "type": "string"
+            }
+          },
+          "required": ["label", "job"]
+        }
+      },
+      "required": ["dev", "nprd", "prod"]
+    },
+    "dev-manager": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": ["email"]
+    },
+    "devops-engineer": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            }
+          },
+          "required": ["email"]
+        }
+      ]
+    }
+  },
+  "required": [
+    "application_name",
+    "gear_id",
+    "lob",
+    "description",
+    "category",
+    "region",
+    "implementation",
+    "technology",
+    "test-automation",
+    "staticscan",
+    "components",
+    "env",
+    "dev-manager",
+    "devops-engineer"
+  ]
+}
