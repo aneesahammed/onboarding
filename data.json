@@ -1,0 +1,87 @@
+{
+  "application_name": "",
+  "gear_id": "",
+  "lob": "",
+  "description": "",
+  "category": "green-field",
+  "region": "mea",
+  "implementation": "devOps-complete",
+  "technology": [
+    {
+      "name": "citrix",
+      "version": "1.8",
+      "frameworks": [
+        {
+          "name": "springboot",
+          "version": "2.0",
+          "tags": [""]
+        }
+      ]
+    }
+  ],
+  "test-automation": {
+    "status": true,
+    "tool": "cucumber"
+  },
+  "staticscan": {
+    "status": true,
+    "tool": "veracode"
+  },
+  "components": {
+    "db": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ],
+    "dml": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ],
+    "services": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ],
+    "ui": [
+      {
+        "source": "",
+        "job": ""
+      }
+    ]
+  },
+  "env": {
+    "dev": [
+      {
+        "label": "dev"
+      }
+    ],
+    "nprd": [
+      {
+        "label": "qa",
+        "job": ""
+      },
+      {
+        "label": "uat",
+        "job": ""
+      }
+    ],
+    "prod": [
+      {
+        "label": "prod",
+        "job": ""
+      }
+    ]
+  },
+  "dev-manager": {
+    "email": ""
+  },
+  "devops-engineer": [
+    {
+      "email": ""
+    }
+  ]
+}
