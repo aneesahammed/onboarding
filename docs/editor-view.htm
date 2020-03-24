@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- when using the mode "code", it's important to specify charset utf-8 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/8.6.3/jsoneditor.min.css" rel="stylesheet"
+        type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/8.6.3/jsoneditor.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>
+        <button onclick="getJSON();">Set JSON</button>
+        <button id="getMe">Get JSON</button>
+    </p>
+    <div id="jsoneditor" style="width: 400px; height: 100vmin;"></div>
+
+    <script>
+        $(document).ready(function () {
+
+            // create the editor
+            var container = document.getElementById("jsoneditor");
+            var editor = new JSONEditor(container);
+
+            $("#getMe").click(function () {
+                $.getJSON("https://raw.githubusercontent.com/aneesahammed/notes/master/msc/master-data.json?token=ACD4WW4UYHNXNSHURVNKINC6PUDOY", function (json, status) {
+                    //alert("Data: " + data + "\nStatus: " + status);
+
+
+
+                    editor.set(json);
+
+                    // get json
+                    function getJSON() {
+                        var json = editor.get();
+                        alert(JSON.stringify(json, null, 2));
+                    }
+                });
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>
